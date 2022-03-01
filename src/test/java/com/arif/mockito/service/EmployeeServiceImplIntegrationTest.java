@@ -1,5 +1,7 @@
-package com.ananth.mockito.service;
+package com.arif.mockito.service;
 
+import com.arif.mockito.service.EmployeeService;
+import com.arif.mockito.service.EmployeeServiceImpl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
@@ -18,8 +20,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.ananth.mockito.entity.Employee;
-import com.ananth.mockito.repository.EmployeeRepository;
+import com.arif.mockito.entity.Employee;
+import com.arif.mockito.repository.EmployeeRepository;
 
 @RunWith(SpringRunner.class)
 public class EmployeeServiceImplIntegrationTest {
@@ -42,14 +44,14 @@ public class EmployeeServiceImplIntegrationTest {
 	@Before
 	public void setUp() {
 		Employee employee = new Employee();
-		employee.setName("ananth");
+		employee.setName("arif");
 
 		Mockito.when(employeeRepository.findByName(employee.getName())).thenReturn(employee);
 	}
 
 	@Test
 	public void whenValidName_thenEmployeeShouldBeFound() {
-		String name = "ananth";
+		String name = "arif";
 		Employee found = service.getEmployeeByName(name);
 
 		Assert.assertEquals(found.getName(), name);
@@ -59,7 +61,7 @@ public class EmployeeServiceImplIntegrationTest {
 	public void getEmployeesTest() {
 		Employee employee1 = new Employee();
 		employee1.setId(Long.valueOf(1));
-		employee1.setName("ananth");
+		employee1.setName("arif");
 		employee1.setAddress("Test Address");
 
 		Employee employee2 = new Employee();
@@ -74,10 +76,10 @@ public class EmployeeServiceImplIntegrationTest {
 	@Test
 	public void getEmployeebyAddressTest() {
 
-		String address = "Bangalore";
+		String address = "Dhaka";
 		Employee employee1 = new Employee();
 		employee1.setId(Long.valueOf(1));
-		employee1.setName("ananth");
+		employee1.setName("arif");
 		employee1.setAddress(address);
 
 		when(employeeRepository.findByAddress(address)).thenReturn(Stream.of(employee1).collect(Collectors.toList()));
@@ -88,7 +90,7 @@ public class EmployeeServiceImplIntegrationTest {
 	public void saveEmployeeTest() {
 		Employee employee = new Employee();
 		employee.setId(Long.valueOf(1));
-		employee.setName("ananth");
+		employee.setName("arif");
 		employee.setAddress("Test Address");
 
 		when(employeeRepository.save(employee)).thenReturn(employee);
@@ -99,7 +101,7 @@ public class EmployeeServiceImplIntegrationTest {
 	public void deleteEmployeeTest() {
 		Employee employee = new Employee();
 		employee.setId(Long.valueOf(1));
-		employee.setName("ananth");
+		employee.setName("arif");
 		employee.setAddress("Test Address");
 		Long deletedId = employee.getId();
 

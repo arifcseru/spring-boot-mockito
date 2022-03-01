@@ -1,4 +1,4 @@
-package com.ananth.mockito.controller;
+package com.arif.mockito.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ananth.mockito.entity.Employee;
-import com.ananth.mockito.service.EmployeeService;
+import com.arif.mockito.entity.Employee;
+import com.arif.mockito.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
@@ -40,9 +40,13 @@ public class EmployeeRestController {
 		return employeeService.addEmployee(employee);
 	}
 
-	@PutMapping("/employee")
-	public Employee updateEmployee(@RequestBody Employee employee) {
-		return employeeService.addEmployee(employee);
+	@PutMapping("/employee/{id}")
+	public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
+		Employee oldEmployee = employeeService.getEmployee(id);
+		oldEmployee.setAddress(employee.getAddress());
+		oldEmployee.setName(employee.getName());
+
+		return employeeService.updateEmployee(oldEmployee);
 	}
 
 }

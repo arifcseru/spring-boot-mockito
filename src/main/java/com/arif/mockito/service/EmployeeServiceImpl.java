@@ -1,4 +1,4 @@
-package com.ananth.mockito.service;
+package com.arif.mockito.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ananth.mockito.entity.Employee;
-import com.ananth.mockito.repository.EmployeeRepository;
+import com.arif.mockito.entity.Employee;
+import com.arif.mockito.repository.EmployeeRepository;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {

@@ -1,4 +1,4 @@
-package com.ananth.mockito.repository;
+package com.arif.mockito.repository;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.ananth.mockito.entity.Employee;
+import com.arif.mockito.entity.Employee;
 
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {

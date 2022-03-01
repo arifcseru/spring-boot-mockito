@@ -1,8 +1,8 @@
-package com.ananth.mockito.service;
+package com.arif.mockito.service;
 
 import java.util.List;
 
-import com.ananth.mockito.entity.Employee;
+import com.arif.mockito.entity.Employee;
 
 public interface EmployeeService {
 

@@ -1,4 +1,4 @@
-package com.ananth.mockito.entity;
+package com.arif.mockito.entity;
 
 import java.io.Serializable;
 

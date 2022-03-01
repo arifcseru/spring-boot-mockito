@@ -1,6 +1,7 @@
-package com.ananth.mockito.repository;
+package com.arif.mockito.repository;
 
-import com.ananth.mockito.entity.Employee;
+import com.arif.mockito.repository.EmployeeRepository;
+import com.arif.mockito.entity.Employee;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.Assert;
@@ -22,7 +23,7 @@ public class EmployeeRepositoryIntegrationTest {
     @Test
     public void whenFindByName_thenReturnEmployee() {
         // given
-        String name = "ananth";
+        String name = "arif";
         Employee employee = new Employee();
         employee.setName(name);
         entityManager.persist(employee);

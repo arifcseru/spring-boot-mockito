@@ -1,4 +1,4 @@
-package com.ananth.mockito.controller;
+package com.arif.mockito.controller;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,8 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.ananth.mockito.entity.Employee;
-import com.ananth.mockito.service.EmployeeService;
+import com.arif.mockito.entity.Employee;
+import com.arif.mockito.service.EmployeeService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(EmployeeRestController.class)
@@ -32,7 +32,7 @@ public class EmployeeRestControllerIntegrationTest {
 
 		Employee employee = new Employee();
 		employee.setId(Long.valueOf(10121));
-		employee.setName("ananth");
+		employee.setName("arif");
 		employee.setAddress("Test Address");
 
 		given(service.getEmployee(employee.getId())).willReturn(employee);
@@ -41,7 +41,7 @@ public class EmployeeRestControllerIntegrationTest {
 		System.out.println("================= employee id: " + employee.getId() + "=======================");
 		System.out.println("========================================");
 		mvc.perform(get("/api/employee/" + employee.getId()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(jsonPath("$.name").value("ananth"));
+				.andExpect(status().isOk()).andExpect(jsonPath("$.name").value("arif"));
 	}
 
 }

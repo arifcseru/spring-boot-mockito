@@ -1,4 +1,4 @@
-package com.ananth.mockito;
+package com.arif.mockito;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.ananth.mockito;
+package com.arif.mockito;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
